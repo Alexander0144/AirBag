@@ -1,0 +1,134 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta name="description" content="página de compras online">
+    <title>AirBag</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Main CSS-->
+    <link rel="stylesheet" type="text/css" href="assets/css/main.css">
+    <!-- Font-icon css-->
+    <link rel="stylesheet" type="text/css" href="assets/font-awesome-4.7.0/css/font-awesome.min.css">
+</head>
+<body class="app sidebar-mini">
+    <!-- Navbar-->
+    <header class="app-header">
+        <a class="app-header__logo" href="index.html">AirBag</a>
+        <!-- Sidebar toggle button--><a class="app-sidebar__toggle" href="#" data-toggle="sidebar" aria-label="Hide Sidebar"></a>
+        <!-- Navbar Right Menu-->
+        <ul class="app-nav">
+                <a class="app-nav__item" href="#">Cerrar Sesión</a>
+            </ul>
+    </header>
+    <!-- Sidebar menu-->
+    <div class="app-sidebar__overlay" data-toggle="sidebar"></div>
+    <aside class="app-sidebar">
+        <div class="app-sidebar__user">
+            <img class="app-sidebar__user-avatar" src="assets/img/profile2.png" alt="User Image">
+            <div>
+                <p class="app-sidebar__user-name">Administrador</p>
+                <p class="app-sidebar__user-designation">Principal</p>
+            </div>
+        </div>
+        <ul class="app-menu">
+            <li><a class="app-menu__item active" href="dashboard.html"><i class="app-menu__icon fa fa-dashboard"></i><span class="app-menu__label">Panel</span></a></li>
+            <li class="treeview">
+                <a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-th-list"></i><span class="app-menu__label">Tablas</span><i class="treeview-indicator fa fa-angle-right"></i></a>
+                <ul class="treeview-menu">
+                    <li><a class="treeview-item" href="table-data-table-categoria.html"><i class="icon fa fa-circle-o"></i>Categorías</a></li>
+                    <li><a class="treeview-item" href="table-data-table-producto.html"><i class="icon fa fa-circle-o"></i>Productos</a></li>
+                    <li><a class="treeview-item" href="table-data-table-usuario.html"><i class="icon fa fa-circle-o"></i>Usuarios</a></li>
+                    <li><a class="treeview-item" href="table-data-table-compra.html"><i class="icon fa fa-circle-o"></i>Compras</a></li>
+                </ul>
+            </li>
+        </ul>
+    </aside>
+    <main class="app-content">
+        <div class="app-title">
+            <div>
+                <h1><i class="fa fa-dashboard"></i> Panel</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 col-lg-3">
+                <div class="widget-small primary coloured-icon">
+                    <i class="icon fa fa-files-o fa-3x"></i>
+                    <div class="info">
+                        <h4>Categorías</h4>
+                        <p><b>5</b></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="widget-small info coloured-icon">
+                    <i class="icon fa fa-star fa-3x"></i>
+                    <div class="info">
+                        <h4>Productos</h4>
+                        <p><b>25</b></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="widget-small warning coloured-icon">
+                    <i class="icon fa fa-users fa-3x"></i>
+                    <div class="info">
+                        <h4>Usuarios</h4>
+                        <p><b>10</b></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="widget-small danger coloured-icon">
+                    <i class="icon fa fa-thumbs-o-up fa-3x"></i>
+                    <div class="info">
+                        <h4>Compras</h4>
+                        <p><b>500</b></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-10 offset-md-1">
+                <div class="tile">
+                    <h3 class="tile-title">Productos más vendidos</h3>
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <canvas class="embed-responsive-item" id="barChartDemo"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-10 offset-md-1">
+                <div class="tile">
+                    <h3 class="tile-title">Productos y Categorías</h3>
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <canvas class="embed-responsive-item" id="pieChartDemo"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-10 offset-md-1">
+                <div class="tile">
+                    <h3 class="tile-title">Usuarios con más compras</h3>
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <canvas class="embed-responsive-item" id="barChartUsuarios"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- Essential javascripts for application to work-->
+    <script src="assets/js/jquery-3.3.1.min.js"></script>
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <!-- Page specific javascripts-->
+    <script type="text/javascript" src="assets/js/plugins/chart.js"></script>
+    <!--Gráficas para Admin principal-->
+    <script type="text/javascript" src="assets/scripts/grafica.js"></script>
+</body>
+</html>
