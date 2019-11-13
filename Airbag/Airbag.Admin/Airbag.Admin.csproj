@@ -1,4 +1,5 @@
 ﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.3.0\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.3.0\build\EntityFramework.props')" />
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -23,6 +24,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <WebGreaseLibPath>..\packages\WebGrease.1.5.2\lib</WebGreaseLibPath>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -43,7 +45,20 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.4.1.9004, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.3.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.3.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -53,6 +68,9 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
@@ -60,6 +78,9 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
+    <Reference Include="WebGrease, Version=1.5.2.14234, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System.Web.Razor">
@@ -89,18 +110,158 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
+    <Content Include="Img\profile2.png" />
+    <Content Include="Js\bootstrap.min.js" />
+    <Content Include="Js\categoria.js" />
+    <Content Include="Js\chart.js" />
+    <Content Include="Js\ckEditor\ckeditor.js" />
+    <Content Include="Js\ckEditor\config.js" />
+    <Content Include="Js\ckEditor\contents.css" />
+    <Content Include="Js\ckEditor\lang\af.js" />
+    <Content Include="Js\ckEditor\lang\ar.js" />
+    <Content Include="Js\ckEditor\lang\az.js" />
+    <Content Include="Js\ckEditor\lang\bg.js" />
+    <Content Include="Js\ckEditor\lang\bn.js" />
+    <Content Include="Js\ckEditor\lang\bs.js" />
+    <Content Include="Js\ckEditor\lang\ca.js" />
+    <Content Include="Js\ckEditor\lang\cs.js" />
+    <Content Include="Js\ckEditor\lang\cy.js" />
+    <Content Include="Js\ckEditor\lang\da.js" />
+    <Content Include="Js\ckEditor\lang\de-ch.js" />
+    <Content Include="Js\ckEditor\lang\de.js" />
+    <Content Include="Js\ckEditor\lang\el.js" />
+    <Content Include="Js\ckEditor\lang\en-au.js" />
+    <Content Include="Js\ckEditor\lang\en-ca.js" />
+    <Content Include="Js\ckEditor\lang\en-gb.js" />
+    <Content Include="Js\ckEditor\lang\en.js" />
+    <Content Include="Js\ckEditor\lang\eo.js" />
+    <Content Include="Js\ckEditor\lang\es-mx.js" />
+    <Content Include="Js\ckEditor\lang\es.js" />
+    <Content Include="Js\ckEditor\lang\et.js" />
+    <Content Include="Js\ckEditor\lang\eu.js" />
+    <Content Include="Js\ckEditor\lang\fa.js" />
+    <Content Include="Js\ckEditor\lang\fi.js" />
+    <Content Include="Js\ckEditor\lang\fo.js" />
+    <Content Include="Js\ckEditor\lang\fr-ca.js" />
+    <Content Include="Js\ckEditor\lang\fr.js" />
+    <Content Include="Js\ckEditor\lang\gl.js" />
+    <Content Include="Js\ckEditor\lang\gu.js" />
+    <Content Include="Js\ckEditor\lang\he.js" />
+    <Content Include="Js\ckEditor\lang\hi.js" />
+    <Content Include="Js\ckEditor\lang\hr.js" />
+    <Content Include="Js\ckEditor\lang\hu.js" />
+    <Content Include="Js\ckEditor\lang\id.js" />
+    <Content Include="Js\ckEditor\lang\is.js" />
+    <Content Include="Js\ckEditor\lang\it.js" />
+    <Content Include="Js\ckEditor\lang\ja.js" />
+    <Content Include="Js\ckEditor\lang\ka.js" />
+    <Content Include="Js\ckEditor\lang\km.js" />
+    <Content Include="Js\ckEditor\lang\ko.js" />
+    <Content Include="Js\ckEditor\lang\ku.js" />
+    <Content Include="Js\ckEditor\lang\lt.js" />
+    <Content Include="Js\ckEditor\lang\lv.js" />
+    <Content Include="Js\ckEditor\lang\mk.js" />
+    <Content Include="Js\ckEditor\lang\mn.js" />
+    <Content Include="Js\ckEditor\lang\ms.js" />
+    <Content Include="Js\ckEditor\lang\nb.js" />
+    <Content Include="Js\ckEditor\lang\nl.js" />
+    <Content Include="Js\ckEditor\lang\no.js" />
+    <Content Include="Js\ckEditor\lang\oc.js" />
+    <Content Include="Js\ckEditor\lang\pl.js" />
+    <Content Include="Js\ckEditor\lang\pt-br.js" />
+    <Content Include="Js\ckEditor\lang\pt.js" />
+    <Content Include="Js\ckEditor\lang\ro.js" />
+    <Content Include="Js\ckEditor\lang\ru.js" />
+    <Content Include="Js\ckEditor\lang\si.js" />
+    <Content Include="Js\ckEditor\lang\sk.js" />
+    <Content Include="Js\ckEditor\lang\sl.js" />
+    <Content Include="Js\ckEditor\lang\sq.js" />
+    <Content Include="Js\ckEditor\lang\sr-latn.js" />
+    <Content Include="Js\ckEditor\lang\sr.js" />
+    <Content Include="Js\ckEditor\lang\sv.js" />
+    <Content Include="Js\ckEditor\lang\th.js" />
+    <Content Include="Js\ckEditor\lang\tr.js" />
+    <Content Include="Js\ckEditor\lang\tt.js" />
+    <Content Include="Js\ckEditor\lang\ug.js" />
+    <Content Include="Js\ckEditor\lang\uk.js" />
+    <Content Include="Js\ckEditor\lang\vi.js" />
+    <Content Include="Js\ckEditor\lang\zh-cn.js" />
+    <Content Include="Js\ckEditor\lang\zh.js" />
+    <Content Include="Js\ckEditor\plugins\dialog\dialogDefinition.js" />
+    <Content Include="Js\ckEditor\plugins\dialog\styles\dialog.css" />
+    <Content Include="Js\ckEditor\sample.js" />
+    <Content Include="Js\ckEditor\sample2.js" />
+    <Content Include="Js\ckEditor\sf.js" />
+    <Content Include="Js\ckEditor\skins\moono-lisa\dialog.css" />
+    <Content Include="Js\ckEditor\skins\moono-lisa\dialog_ie.css" />
+    <Content Include="Js\ckEditor\skins\moono-lisa\dialog_ie8.css" />
+    <Content Include="Js\ckEditor\skins\moono-lisa\dialog_iequirks.css" />
+    <Content Include="Js\ckEditor\skins\moono-lisa\editor.css" />
+    <Content Include="Js\ckEditor\skins\moono-lisa\editor_gecko.css" />
+    <Content Include="Js\ckEditor\skins\moono-lisa\editor_ie.css" />
+    <Content Include="Js\ckEditor\skins\moono-lisa\editor_ie8.css" />
+    <Content Include="Js\ckEditor\skins\moono-lisa\editor_iequirks.css" />
+    <Content Include="Js\ckEditor\skins\moono-lisa\icons.png" />
+    <Content Include="Js\ckEditor\skins\moono-lisa\icons_hidpi.png" />
+    <Content Include="Js\ckEditor\skins\moono-lisa\images\arrow.png" />
+    <Content Include="Js\ckEditor\skins\moono-lisa\images\close.png" />
+    <Content Include="Js\ckEditor\skins\moono-lisa\images\hidpi\close.png" />
+    <Content Include="Js\ckEditor\skins\moono-lisa\images\hidpi\lock-open.png" />
+    <Content Include="Js\ckEditor\skins\moono-lisa\images\hidpi\lock.png" />
+    <Content Include="Js\ckEditor\skins\moono-lisa\images\hidpi\refresh.png" />
+    <Content Include="Js\ckEditor\skins\moono-lisa\images\lock-open.png" />
+    <Content Include="Js\ckEditor\skins\moono-lisa\images\lock.png" />
+    <Content Include="Js\ckEditor\skins\moono-lisa\images\refresh.png" />
+    <Content Include="Js\ckEditor\skins\moono-lisa\images\spinner.gif" />
+    <Content Include="Js\ckEditor\styles.js" />
+    <Content Include="Js\compra.js" />
+    <Content Include="Js\dataTables.bootstrap.min.js" />
+    <Content Include="Js\dropzone.js" />
+    <Content Include="Js\grafica.js" />
+    <Content Include="Js\jquery-3.3.1.min.js" />
+    <Content Include="Js\jquery.dataTables.min.js" />
+    <Content Include="Js\main.js" />
+    <Content Include="Js\popper.min.js" />
+    <Content Include="Js\producto.js" />
+    <Content Include="Js\select2.min.js" />
+    <Content Include="Js\sweetalert.min.js" />
+    <Content Include="Js\usuario.js" />
+    <Content Include="Styles\bootstrap.min.css" />
+    <Content Include="Styles\font-awesome-4.7.0\css\font-awesome.min.css" />
+    <Content Include="Styles\font-awesome-4.7.0\fonts\fontawesome-webfont.svg" />
+    <Content Include="Styles\main.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CategoriaController.cs" />
+    <Compile Include="Controllers\CompraController.cs" />
+    <Compile Include="Controllers\PanelPrincipalController.cs" />
+    <Compile Include="Controllers\ProductoController.cs" />
+    <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\web.config" />
+    <Content Include="Views\web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Js\ckEditor\skins\moono-lisa\readme.md" />
     <None Include="packages.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\PanelPrincipal\Index.cshtml" />
+    <Content Include="Styles\font-awesome-4.7.0\fonts\fontawesome-webfont.eot" />
+    <Content Include="Styles\font-awesome-4.7.0\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Styles\font-awesome-4.7.0\fonts\fontawesome-webfont.woff" />
+    <Content Include="Styles\font-awesome-4.7.0\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Styles\font-awesome-4.7.0\fonts\FontAwesome.otf" />
+    <Content Include="Views\Categoria\Index.cshtml" />
+    <Content Include="Views\Compra\Index.cshtml" />
+    <Content Include="Views\Producto\Index.cshtml" />
+    <Content Include="Views\Usuario\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -110,8 +271,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Controllers\" />
+    <Folder Include="Content\" />
     <Folder Include="Models\" />
+    <Folder Include="Scripts\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Airbag.Datos\Airbag.Datos.csproj">
@@ -153,7 +315,10 @@
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.3.0\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.3.0\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.3.0\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.3.0\build\EntityFramework.targets'))" />
   </Target>
+  <Import Project="..\packages\EntityFramework.6.3.0\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.3.0\build\EntityFramework.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

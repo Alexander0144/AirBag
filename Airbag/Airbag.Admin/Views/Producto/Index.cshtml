@@ -1,0 +1,206 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section scripts{
+    <script src="~/Js/select2.min.js"></script>
+    <script src="~/Js/dropzone.js"></script>
+    <script src="~/Js/ckEditor/ckeditor.js"></script>
+    <script src="~/Js/ckEditor/sample.js"></script>
+    <script src="~/Js/ckEditor/sample2.js"></script>
+    <script src="~/Js/producto.js"></script>
+
+}
+
+<main class="app-content">
+    <div class="app-title">
+        <div>
+            <h1><i class="fa fa-th-list"></i> Lista de productos</h1>
+        </div>
+    </div>
+    <div class="col-lg-12">
+        <div class="row">
+            <button class="btn btn-success mr-1" type="button" data-toggle="modal" data-target="#agregarProducto">Agregar</button>
+            <button class="btn btn-success mr-1" type="button" id="ActivarProducto">Activar</button>
+            <button class="btn btn-warning mr-1" type="button" data-toggle="modal" data-target="#editarProducto">Editar</button>
+            <button class="btn btn-danger mr-1" type="button" id="demoSwal">Desactivar</button>
+            <div class="bs-component">
+                <ul class="nav nav-pills">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" style="background-color:#F9C31C; color:black;">Más opciones</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">Descargar plantilla</a>
+                            <a class="dropdown-item" id="importarRegistro" href="#"
+                               data-toggle="modal" data-target="#agregarMuchosModal">Importar registros excel</a>
+                            <a class="dropdown-item" href="#">Exportar registros excel</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="bs-component">
+        <div class="modal fade" id="agregarMuchosModal">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Importar registros</h5>
+                        <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                    </div>
+                    <div class="modal-body">
+
+                        <div class="col-md-12">
+                            <div class="tile">
+                                <div class="tile-title-w-btn">
+
+                                </div>
+                                <div class="tile-body">
+                                    <h4 class="text-center">Solo archivos Excel</h4>
+                                    <form class="text-center dropzone" method="POST" enctype="multipart/form-data" action="/file-upload">
+                                        <div class="dz-message">Drop files here or click to upload<br><small class="text-info">(This is just a dropzone demo. Selected files are not actually uploaded.)</small></div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-primary" type="button">Importar</button>
+                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bs-component">
+        <div class="modal fade" id="agregarProducto">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Agregar producto</h5>
+                        <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Categoría</p>
+                        <select class="form-control" id="demoSelect" style="width: 100%;">
+                            <optgroup label="Selecciona una categoría">
+                                <option>Ahmedabad</option>
+                                <option>Surat</option>
+                                <option>Vadodara</option>
+                            </optgroup>
+                        </select>
+                        <br>
+                        <div class="form-group" style="margin-top: 1em;">
+                            <label for="exampleInputEmail1">Nombre</label>
+                            <input class="form-control" id="exampleInputEmail1" type="email" aria-describedby="emailHelp" placeholder="Nombre del producto">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label">Precio</label>
+                            <div class="form-group">
+                                <label class="sr-only" for="exampleInputAmount">Amount (in dollars)</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend"><span class="input-group-text">$</span></div>
+                                    <input class="form-control" id="exampleInputAmount" type="text" placeholder="Precio">
+                                    <div class="input-group-append"><span class="input-group-text">.00</span></div>
+                                </div>
+                            </div>
+                        </div>
+                        <p>Descripción</p>
+                        <div id="editor">
+                            <h1>Descripción</h1>
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <label for="exampleInputFile">Subir imagen de producto</label>
+                            <input class="form-control-file" id="exampleInputFile" type="file" aria-describedby="fileHelp"><small class="form-text text-muted" id="fileHelp">Elige una imagen de acuerdo al producto.</small>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-primary" type="button">Guardar</button>
+                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bs-component">
+        <div class="modal fade" id="editarProducto">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Editar producto</h5>
+                        <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="text-center">
+                            <img src="https://www.w3schools.com/bootstrap4/cinqueterre.jpg" class="rounded img-thumbnail" alt="Cinque Terre" width="150" height="150">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Nombre</label>
+                            <input class="form-control" id="exampleInputEmail1" type="email" aria-describedby="emailHelp" placeholder="Nombre del producto">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label">Precio</label>
+                            <div class="form-group">
+                                <label class="sr-only" for="exampleInputAmount">Amount (in dollars)</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend"><span class="input-group-text">$</span></div>
+                                    <input class="form-control" id="exampleInputAmount" type="text" placeholder="Precio">
+                                    <div class="input-group-append"><span class="input-group-text">.00</span></div>
+                                </div>
+                            </div>
+                        </div>
+                        <p>Descripción</p>
+                        <div id="editor2">
+                            <h1>Descripción</h1>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-primary" type="button">Guardar</button>
+                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="tile">
+                <div class="tile-body">
+                    <div class="table-responsive">
+                        <table class="table table-hover table-bordered" id="sampleTable">
+                            <thead>
+                                <tr>
+                                    <th>Id</th>
+                                    <th>Nombre</th>
+                                    <th>Precio</th>
+                                    <th>Existencia</th>
+                                    <th>Unidades vendidas</th>
+                                    <th>Descripción</th>
+                                    <th>Estatus</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Tiger Nixon</td>
+                                    <td>System Architect</td>
+                                    <td>Edinburgh</td>
+                                    <td>61</td>
+                                    <td>2011/04/25</td>
+                                    <td>Activo</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>

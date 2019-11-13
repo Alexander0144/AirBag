@@ -1,0 +1,63 @@
+﻿@using System.Web.Optimization;
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="description" content="página de compras online">
+    <title>AirBag</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="~/Styles/main.css" rel="stylesheet" />
+    <link href="~/Styles/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+</head>
+<body class="app sidebar-mini">
+    <header class="app-header">
+        <a class="app-header__logo" href="index.html">AirBag</a>
+        <!-- Sidebar toggle button--><a class="app-sidebar__toggle" href="#" data-toggle="sidebar" aria-label="Hide Sidebar"></a>
+        <!-- Navbar Right Menu-->
+        <ul class="app-nav">
+            <a class="app-nav__item" href="#">Cerrar Sesión</a>
+        </ul>
+    </header>
+
+    <!-- Sidebar menu-->
+    <div class="app-sidebar__overlay" data-toggle="sidebar"></div>
+    <aside class="app-sidebar">
+        <div class="app-sidebar__user">
+            <img class="app-sidebar__user-avatar" src="~/Img/profile2.png" alt="User Image">
+            <div>
+                <p class="app-sidebar__user-name">Administrador</p>
+                <p class="app-sidebar__user-designation">Principal</p>
+            </div>
+        </div>
+        <ul class="app-menu">
+            <li><a class="app-menu__item" href="@Url.Action("Index","PanelPrincipal")"><i class="app-menu__icon fa fa-dashboard"></i><span class="app-menu__label">Panel</span></a></li>
+            <li class="treeview">
+                <a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-th-list"></i><span class="app-menu__label">Tablas</span><i class="treeview-indicator fa fa-angle-right"></i></a>
+                <ul class="treeview-menu">
+                    <li><a class="treeview-item" href="@Url.Action("Index","Categoria")"><i class="icon fa fa-circle-o"></i>Categorías</a></li>
+                    <li><a class="treeview-item" href="@Url.Action("Index","Producto")"><i class="icon fa fa-circle-o"></i>Productos</a></li>
+                    <li><a class="treeview-item" href="@Url.Action("Index","Usuario")"><i class="icon fa fa-circle-o"></i>Usuarios</a></li>
+                    <li><a class="treeview-item" href="@Url.Action("Index","Compra")"><i class="icon fa fa-circle-o"></i>Compras</a></li>
+                </ul>
+            </li>
+        </ul>
+    </aside>
+
+
+    <div class="">
+        @RenderBody()
+    </div>
+    <script src="~/Js/jquery-3.3.1.min.js"></script>
+    <script src="~/Js/popper.min.js"></script>
+    <script src="~/Js/bootstrap.min.js"></script>
+    <script src="~/Js/main.js"></script>
+
+    <script src="~/Js/sweetalert.min.js"></script>
+    <script src="~/Js/jquery.dataTables.min.js"></script>
+    <script src="~/Js/dataTables.bootstrap.min.js"></script>
+
+    @RenderSection("scripts", required: false)
+    @RenderSection("Styles", required: false)
+</body>
+</html>
