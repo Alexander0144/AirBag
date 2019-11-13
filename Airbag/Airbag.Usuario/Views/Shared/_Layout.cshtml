@@ -28,7 +28,7 @@
                     <!-- Logo -->
                     <div class="col-lg-2 col-sm-3 col-3 order-1">
                         <div class="logo_container">
-                            <div class="logo"><a href="#">AirBag</a></div>
+                            <div class="logo">@Html.ActionLink("AirBag", "Index", "Home")</div>
                         </div>
                     </div>
 
@@ -90,7 +90,8 @@
                                 </div> <!--  dropdown-menu .// -->
                             </div>
 
-                            <a href="">
+                            
+                            <a href="/Transaccion/Carrito">
                                 <!-- Cart -->
                                 <div class="cart">
                                     <div class="cart_container d-flex flex-row align-items-center justify-content-end">
@@ -99,8 +100,9 @@
                                             <div class="cart_count"><span>10</span></div>
                                         </div>
                                         <div class="cart_content">
-                                            <div class="cart_text"><a href="carrito.html">Carrito</a></div>
-                                            <div class="cart_price">$85</div>
+                                            <div class="cart_text">@Html.ActionLink("Carrito", "Carrito", "Transaccion")</div>
+                                            <!--Queda pendiente el precio total de los productos en el carrito-->
+                                            <!--<div class="cart_price">$85</div>-->
                                         </div>
                                     </div>
                                 </div>
