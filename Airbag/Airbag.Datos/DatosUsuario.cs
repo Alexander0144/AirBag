@@ -6,11 +6,33 @@ namespace Airbag.Datos
 {
     public class DatosUsuario
     {
-     
-        public void AgregarUsuario(tblUsuario Usuario)
+        AirbagEntities contexto = new AirbagEntities();
+
+        public bool AgregarUsuario(tblUsuario Usuario)
         {
-            //Implementar método para agregar un nuevo registro de una Usuario a la Base de Datos
-            //A cada usuario le corresponde una sola Usuario, se podrá modificar el registro para reemplazarlo por otra Usuario
+
+            //AirbagEntities entities = new AirbagEntities();
+            try
+            {
+                contexto.tblUsuario.Add(Usuario);
+                contexto.SaveChanges();
+                return true;
+            }catch(System.Exception e)
+            {
+                return false;
+            }
+        }
+
+        public List<tblUsuario> ObtenerDatosUsuarios()
+        {
+            //AirbagEntities contexto = new AirbagEntities();
+            return contexto.tblUsuario.ToList();
+        }
+
+        public bool ExisteCorreoEnBDD(string cCorreo)
+        {
+            //AirbagEntities contexto = new AirbagEntities();
+            return contexto.tblUsuario.Any(u => u.cCorreo == cCorreo);
         }
 
 

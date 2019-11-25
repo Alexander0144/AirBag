@@ -105,6 +105,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
+    <Content Include="img\avatar.png" />
     <Content Include="img\carousel_item1.jpg" />
     <Content Include="img\carousel_item2.jpg" />
     <Content Include="img\cart.png" />
@@ -116,21 +117,38 @@
     <Content Include="js\bootstrap4.min.js" />
     <Content Include="js\custom.js" />
     <Content Include="js\easing.js" />
+    <Content Include="js\isotope.pkgd.min.js" />
     <Content Include="js\jquery-3.3.1.min.js" />
+    <Content Include="js\jquery-ui.js" />
+    <Content Include="js\LogicaCrearCuenta.js" />
+    <Content Include="js\LogicaInicioSesion.js" />
     <Content Include="js\owl.carousel.js" />
+    <Content Include="js\parallax.min.js" />
     <Content Include="js\popper.js" />
+    <Content Include="js\ScriptBusquedaCategorias.js" />
+    <Content Include="js\ScriptCierreSesion.js" />
     <Content Include="js\ScrollMagic.min.js" />
     <Content Include="js\ScrollToPlugin.min.js" />
+    <Content Include="js\shop_custom.js" />
     <Content Include="js\slick.js" />
     <Content Include="js\TimelineMax.min.js" />
     <Content Include="js\TweenMax.min.js" />
     <Content Include="styles\animate.css" />
+    <Content Include="styles\blog_responsive.css" />
+    <Content Include="styles\blog_single_responsive.css" />
+    <Content Include="styles\blog_single_styles.css" />
+    <Content Include="styles\blog_styles.css" />
     <Content Include="styles\bootstrap.min.css" />
+    <Content Include="styles\cuenta.css" />
     <Content Include="styles\fontawesome-all.css" />
+    <Content Include="styles\jquery-ui.css" />
+    <Content Include="styles\login.css" />
     <Content Include="styles\main_styles.css" />
     <Content Include="styles\owl.carousel.css" />
     <Content Include="styles\owl.theme.default.css" />
     <Content Include="styles\responsive.css" />
+    <Content Include="styles\shop_responsive.css" />
+    <Content Include="styles\shop_styles.css" />
     <Content Include="styles\slick.css" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -138,10 +156,16 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ProductoController.cs" />
+    <Compile Include="Controllers\SessionController.cs" />
     <Compile Include="Controllers\TransaccionController.cs" />
+    <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\CrearCuentaViewModel.cs" />
+    <Compile Include="Models\InicioSesionViewModel.cs" />
+    <Compile Include="Models\ProductosEnCategoriaViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -152,6 +176,11 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Transaccion\Carrito.cshtml" />
+    <Content Include="Views\Producto\VistaDetallesProducto.cshtml" />
+    <Content Include="Views\Producto\VistaProductosEnCategoria.cshtml" />
+    <Content Include="Views\Session\CrearCuenta.cshtml" />
+    <Content Include="Views\Session\InicioSesion.cshtml" />
+    <Content Include="Views\Usuario\VistaPerfil.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -161,7 +190,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Airbag.Datos\Airbag.Datos.csproj">

@@ -4,8 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="fcaa6257f9a948c9804d178a4c85b5a4" Name="Diagram1">
-        <EntityTypeShape EntityType="AirbagModel.sysdiagrams" Width="1.5" PointX="7.75" PointY="1.625" IsExpanded="true" />
+      <Diagram DiagramId="af8d94e17fe340009b1626d5463d6e19" Name="Diagram1">
         <EntityTypeShape EntityType="AirbagModel.tblAdministrador" Width="1.5" PointX="2.75" PointY="1.625" IsExpanded="true" />
         <EntityTypeShape EntityType="AirbagModel.tblCat_Carrito" Width="1.5" PointX="3" PointY="5.375" IsExpanded="true" />
         <EntityTypeShape EntityType="AirbagModel.tblCat_Categoria" Width="1.5" PointX="1.5" PointY="15.625" IsExpanded="true" />
