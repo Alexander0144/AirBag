@@ -1,0 +1,75 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Crear Cuenta</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Proyecto AirBag">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="~/styles/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/styles/fontawesome-all.css" rel="stylesheet" />
+    <link href="~/styles/responsive.css" rel="stylesheet" />
+    <link href="~/styles/cuenta.css" rel="stylesheet" />
+</head>
+<body>
+    <<section class="material-half-bg">
+        <div class="cover"></div>
+    </section>
+    <section class="login-content">
+        <a href="~/Home/Index">
+            <div class="logo">
+                <h1>AirBag </h1>
+            </div>
+        </a>
+        <div class="login-box">
+            <form class="login-form">
+                <h4 class="card-title text-center">Registrate</h4>
+                <div class="form-group">
+                    <label class="control-label">Nombre(s)</label>
+                    <input id="txtNombreRegUsuario" class="form-control" type="text" placeholder="" autofocus>
+                </div>
+                <div class="form-row">
+                    <div class="col form-group">
+                        <label>Apellido Paterno</label>
+                        <input id="txtApellidoPaternoRegUsuario" type="text" class="form-control" placeholder="">
+                    </div> <!-- form-group end.// -->
+                    <div class="col form-group">
+                        <label>Apellido Materno</label>
+                        <input id="txtApellidoMaternoRegUsuario" type="text" class="form-control" placeholder="">
+                    </div> <!-- form-group end.// -->
+                </div> <!-- form-row end.// -->
+                <div class="form-group">
+                    <label class="control-label">Correo</label>
+                    <input id="txtCorreoRegUsuario" class="form-control" type="email" placeholder="" autofocus>
+                </div>
+                <div class="form-group">
+                    <label class="control-label">Contraseña</label>
+                    <input id="contraseñaRegUsr" class="form-control" type="password" placeholder="">
+                </div>
+                <div class="form-group">
+                    <label class="control-label">Confirmar Contraseña</label>
+                    <input id="confContrsñRegUsr" class="form-control" type="password" placeholder="">
+                </div>
+                </br>
+                <div>
+                    <input type="button" class="btn btn-primary btn-block" id="btnRegistrarUsr" value="Registrarse"/>
+                </div>
+            </form>
+
+
+        </div>
+        <div class="border-top card-body text-center">
+            ¿Ya tienes una cuenta?
+            <a href="~/Session/InicioSesion">Inicia Sesión</a>
+        </div>
+    </section>
+    <script src="~/js/jquery-3.3.1.min.js"></script>
+    <script src="~/js/LogicaCrearCuenta.js"></script>
+</body>
+</html>

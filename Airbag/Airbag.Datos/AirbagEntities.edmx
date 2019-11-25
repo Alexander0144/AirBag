@@ -38,7 +38,7 @@
             <PropertyRef Name="iIdCategoria" />
           </Key>
           <Property Name="iIdCategoria" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="iEstatus" Type="int" Nullable="false" />
+          <Property Name="iEstatus" Type="bit" Nullable="false" />
           <Property Name="cNombre" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="tblCat_Producto">
@@ -47,7 +47,7 @@
           </Key>
           <Property Name="iIdProducto" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="iIdCategoria" Type="int" Nullable="false" />
-          <Property Name="iEstatus" Type="int" Nullable="false" />
+          <Property Name="iEstatus" Type="bit" Nullable="false" />
           <Property Name="iExistencia" Type="int" Nullable="false" />
           <Property Name="iCantidadVendida" Type="int" Nullable="false" />
           <Property Name="dPrecio" Type="decimal" Precision="18" Scale="0" Nullable="false" />
@@ -102,7 +102,7 @@
             <PropertyRef Name="iIdUsuario" />
           </Key>
           <Property Name="iIdUsuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="iEstatus" Type="int" Nullable="false" />
+          <Property Name="iEstatus" Type="bit" Nullable="false" />
           <Property Name="cNombre" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="cApellidoPaterno" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="cApellidoMaterno" Type="varchar" MaxLength="50" Nullable="false" />
@@ -304,7 +304,7 @@
             <PropertyRef Name="iIdCategoria" />
           </Key>
           <Property Name="iIdCategoria" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="iEstatus" Type="Int32" Nullable="false" />
+          <Property Name="iEstatus" Type="Boolean" Nullable="false" />
           <Property Name="cNombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="tblCat_Producto" Relationship="Self.FK_iIdCategoria" FromRole="tblCat_Categoria" ToRole="tblCat_Producto" />
         </EntityType>
@@ -314,13 +314,14 @@
           </Key>
           <Property Name="iIdProducto" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="iIdCategoria" Type="Int32" Nullable="false" />
-          <Property Name="iEstatus" Type="Int32" Nullable="false" />
+          <Property Name="iEstatus" Type="Boolean" Nullable="false" />
           <Property Name="iExistencia" Type="Int32" Nullable="false" />
           <Property Name="iCantidadVendida" Type="Int32" Nullable="false" />
           <Property Name="dPrecio" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
           <Property Name="cNombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="cDescripcion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="cRutalmgProducto" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="dtFechaRegistro" Type="DateTime" Nullable="false" Precision="0" />
           <NavigationProperty Name="tblCat_Carrito" Relationship="Self.FK_iIdProductoCarrito" FromRole="tblCat_Producto" ToRole="tblCat_Carrito" />
           <NavigationProperty Name="tblCat_Categoria" Relationship="Self.FK_iIdCategoria" FromRole="tblCat_Producto" ToRole="tblCat_Categoria" />
           <NavigationProperty Name="tblDetallesCompra" Relationship="Self.FK_iIdProducto" FromRole="tblCat_Producto" ToRole="tblDetallesCompra" />
@@ -381,7 +382,7 @@
             <PropertyRef Name="iIdUsuario" />
           </Key>
           <Property Name="iIdUsuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="iEstatus" Type="Int32" Nullable="false" />
+          <Property Name="iEstatus" Type="Boolean" Nullable="false" />
           <Property Name="cNombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="cApellidoPaterno" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="cApellidoMaterno" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
@@ -606,6 +607,7 @@
                 <ScalarProperty Name="cNombre" ColumnName="cNombre" />
                 <ScalarProperty Name="cDescripcion" ColumnName="cDescripcion" />
                 <ScalarProperty Name="cRutalmgProducto" ColumnName="cRutalmgProducto" />
+                <ScalarProperty Name="dtFechaRegistro" ColumnName="dtFechaRegistro" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

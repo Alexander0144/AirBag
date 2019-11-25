@@ -23,7 +23,7 @@ namespace Airbag.Datos
     
         public int iIdProducto { get; set; }
         public int iIdCategoria { get; set; }
-        public int iEstatus { get; set; }
+        public bool iEstatus { get; set; }
         public int iExistencia { get; set; }
         public int iCantidadVendida { get; set; }
         public decimal dPrecio { get; set; }

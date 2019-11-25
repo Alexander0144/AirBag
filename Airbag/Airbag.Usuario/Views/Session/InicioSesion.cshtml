@@ -1,0 +1,66 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Inicio de Sesión</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="OneTech shop project">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="~/styles/fontawesome-all.css" rel="stylesheet" />
+    <link href="~/styles/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/styles/blog_single_styles.css" rel="stylesheet" />
+    <link href="~/styles/blog_single_responsive.css" rel="stylesheet" />
+    <link href="~/styles/login.css" rel="stylesheet" />
+</head>
+<body>
+    <section class="material-half-bg">
+        <div class="cover"></div>
+    </section>
+    <br />
+    <br />
+    <section class="login-content">
+        <a href="~/Home/Index">
+            <div class="logo">
+                <h1>AirBag </h1>
+            </div>
+        </a>
+        <div class="login-box">
+            <form class="login-form">
+                <div class="login100-form-avatar">
+                    <img src="~/img/avatar.png" alt="AVATAR" />
+                </div>
+                <div class="form-group">
+                    <label class="control-label">Correo</label>
+                    <input id="inputLoginCorreo" class="form-control" type="email" placeholder="Correo" autofocus>
+                </div>
+                <div class="form-group">
+                    <label class="control-label">Contraseña</label>
+                    <input id="inputLoginContraseña" class="form-control" type="password" placeholder="Contraseña">
+                </div>
+
+                <div class="form-group btn-container">
+                    <input type="button" class="btn btn-primary btn-block" id="btnInicioSesionUsr" value="Iniciar sesión">
+                </div>
+            </form>
+
+
+        </div>
+        <div class="border-top card-body text-center">
+            ¿No tienes una cuenta?
+            <a href="~/Session/CrearCuenta">Crear Cuenta</a>
+        </div>
+    </section>
+    <script src="~/js/jquery-3.3.1.min.js"></script>
+    <script src="~/js/popper.js"></script>
+    <script src="~/js/bootstrap4.min.js"></script>
+    <script src="~/js/TweenMax.min.js"></script>
+    <script src="~/js/easing.js"></script>
+    <script src="~/js/LogicaInicioSesion.js"></script>
+</body>
+</html>

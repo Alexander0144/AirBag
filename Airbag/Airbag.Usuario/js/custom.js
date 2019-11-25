@@ -171,6 +171,7 @@ $(document).ready(function()
 
 	*/
 
+
 	function initPageMenu()
 	{
 		if($('.page_menu').length && $('.page_menu_content').length)
@@ -206,23 +207,24 @@ $(document).ready(function()
 							evt.preventDefault();
 							evt.stopPropagation();
 							var subItem = item.find('> ul');
-						    if(subItem.hasClass('active'))
-						    {
-						    	subItem.toggleClass('active');
+							if(subItem.hasClass('active'))
+							{
+								subItem.toggleClass('active');
 								TweenMax.to(subItem, 0.3, {height:0});
-						    }
-						    else
-						    {
-						    	subItem.toggleClass('active');
-						    	TweenMax.set(subItem, {height:"auto"});
+							}
+							else
+							{
+								subItem.toggleClass('active');
+								TweenMax.set(subItem, {height:"auto"});
 								TweenMax.from(subItem, 0.3, {height:0});
-						    }
+							}
 						});
 					}
 				});
 			}
 		}
 	}
+
 
 	function openMenu()
 	{
@@ -738,7 +740,7 @@ $(document).ready(function()
 			arrows:false,
 			dots:true,
 			autoplay: true,
-  			autoplaySpeed: 6000,
+			autoplaySpeed: 6000,
 			responsive:
 			[
 				{
@@ -801,7 +803,7 @@ $(document).ready(function()
 
 			trendsSlider.on('click', '.trends_fav', function (ev)
 			{
-			    $(ev.target).toggleClass('active');
+				$(ev.target).toggleClass('active');
 			});
 
 			if($('.trends_prev').length)
@@ -956,30 +958,30 @@ $(document).ready(function()
 	*/
 
 	function initTimer()
-    {
-    	if($('.deals_timer_box').length)
-    	{
-    		var timers = $('.deals_timer_box');
-    		timers.each(function()
-    		{
-    			var timer = $(this);
+	{
+		if($('.deals_timer_box').length)
+		{
+			var timers = $('.deals_timer_box');
+			timers.each(function()
+			{
+				var timer = $(this);
 
-    			var targetTime;
-    			var target_date;
+				var targetTime;
+				var target_date;
 
-    			// Add a date to data-target-time of the .deals_timer_box
-    			// Format: "Feb 17, 2018"
-    			if(timer.data('target-time') !== "")
-    			{
-    				targetTime = timer.data('target-time');
+				// Add a date to data-target-time of the .deals_timer_box
+				// Format: "Feb 17, 2018"
+				if(timer.data('target-time') !== "")
+				{
+					targetTime = timer.data('target-time');
 					target_date = new Date(targetTime).getTime();
-    			}
-    			else
-    			{
-    				var date = new Date();
-			    	date.setDate(date.getDate() + 2);
-			    	target_date = date.getTime();
-    			}
+				}
+				else
+				{
+					var date = new Date();
+					date.setDate(date.getDate() + 2);
+					target_date = date.getTime();
+				}
 
 				// variables for time units
 				var days, hours, minutes, seconds;
@@ -990,43 +992,43 @@ $(document).ready(function()
 
 				setInterval(function ()
 				{
-				    // find the amount of "seconds" between now and target
-				    var current_date = new Date().getTime();
-				    var seconds_left = (target_date - current_date) / 1000;
-				    console.log(seconds_left);
+					// find the amount of "seconds" between now and target
+					var current_date = new Date().getTime();
+					var seconds_left = (target_date - current_date) / 1000;
+					console.log(seconds_left);
 				 
-				    // do some time calculations
-				    days = parseInt(seconds_left / 86400);
-				    seconds_left = seconds_left % 86400;
-				    
-				    hours = parseInt(seconds_left / 3600);
-				    hours = hours + days * 24;
-				    seconds_left = seconds_left % 3600;
-				    
-				     
-				    minutes = parseInt(seconds_left / 60);
-				    seconds = parseInt(seconds_left % 60);
+					// do some time calculations
+					days = parseInt(seconds_left / 86400);
+					seconds_left = seconds_left % 86400;
+					
+					hours = parseInt(seconds_left / 3600);
+					hours = hours + days * 24;
+					seconds_left = seconds_left % 3600;
+					
+					 
+					minutes = parseInt(seconds_left / 60);
+					seconds = parseInt(seconds_left % 60);
 
-				    if(hours.toString().length < 2)
-				    {
-				    	hours = "0" + hours;
-				    }
-				    if(minutes.toString().length < 2)
-				    {
-				    	minutes = "0" + minutes;
-				    }
-				    if(seconds.toString().length < 2)
-				    {
-				    	seconds = "0" + seconds;
-				    }
+					if(hours.toString().length < 2)
+					{
+						hours = "0" + hours;
+					}
+					if(minutes.toString().length < 2)
+					{
+						minutes = "0" + minutes;
+					}
+					if(seconds.toString().length < 2)
+					{
+						seconds = "0" + seconds;
+					}
 
-				    // display results
-				    h.text(hours);
-				    m.text(minutes);
-				    s.text(seconds); 
+					// display results
+					h.text(hours);
+					m.text(minutes);
+					s.text(seconds); 
 				 
 				}, 1000);
-    		});	
-    	}	
-    }
+			});	
+		}	
+	}
 });
