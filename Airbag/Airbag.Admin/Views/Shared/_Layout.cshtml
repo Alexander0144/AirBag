@@ -10,6 +10,9 @@
     <link href="~/Styles/main.css" rel="stylesheet" />
     <link href="~/Styles/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" />
 </head>
+
+@RenderSection("Styles", required: false)
+
 <body class="app sidebar-mini">
     <header class="app-header">
         <a class="app-header__logo" href="index.html">AirBag</a>
@@ -47,17 +50,16 @@
 
     <div class="">
         @RenderBody()
+        <div class="modal fade" id="modalDetalles"></div>
+
     </div>
     <script src="~/Js/jquery-3.3.1.min.js"></script>
     <script src="~/Js/popper.min.js"></script>
     <script src="~/Js/bootstrap.min.js"></script>
     <script src="~/Js/main.js"></script>
-
     <script src="~/Js/sweetalert.min.js"></script>
-    <script src="~/Js/jquery.dataTables.min.js"></script>
-    <script src="~/Js/dataTables.bootstrap.min.js"></script>
 
     @RenderSection("scripts", required: false)
-    @RenderSection("Styles", required: false)
+
 </body>
 </html>

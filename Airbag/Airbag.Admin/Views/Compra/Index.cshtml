@@ -1,86 +1,54 @@
-﻿
+﻿@model IEnumerable<Airbag.Datos.tblCompra>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-@section scripts{
+@section Styles {
 
-    <script src="~/Js/compra.js"></script>
+    <link href="~/Styles/datatables.min.css" rel="stylesheet" />
 
 }
 
-    <main class="app-content">
-        <div class="app-title">
-            <div>
-                <h1><i class="fa fa-th-list"></i> Lista de compras</h1>
-            </div>
+<main class="app-content">
+    <div class="app-title">
+        <div>
+            <h1><i class="fa fa-th-list"></i> Lista de compras</h1>
         </div>
-        <button class="btn btn-success mr-1" type="button" data-toggle="modal" data-target="#detallesCompra">Ver detalles</button>
-        <div class="bs-component">
-            <div class="modal fade" id="detallesCompra">
-                <div class="modal-dialog modal-dialog-centered" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title">Detalles de compra</h5>
-                            <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-                        </div>
+    </div>
+    <button class="btn btn-success" type="button" data-toggle="modalDetalles" id="btnDetalles">Ver detalles</button>
 
-                        <div class="modal-body">
-                            <div class="text-center">
-                                <b><h5>Datos del cliente</h5></b>
-                                <p>Nombre : Brielle Williamson</p>
-                                <p>Dirección : 2375 Pennsylvania Ave Nw</p>
-                                <hr>
-                            </div>
-                            <div class="text-center">
-                                <b><h5>Productos</h5></b>
-                            </div>
-                            <div class="text-center">
-                                <p>Pantalla Vios 32 plg HD LED Smart TV</p>
-                                <p>Audífonos Liberty Air</p>
-                            </div>
-                            <hr>
-                            <div class="text-center">
-                                <p>Importe Total: $666.00</p>
-                            </div>
-
-                        </div>
-                        <div class="modal-footer">
-                            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cerrar</button>
-                        </div>
+    <br>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="tile">
+                <div class="tile-body">
+                    <div class="table-responsive">
+                        <table class="table table-hover table-bordered display" id="TablaCompras" style="width:100%">
+                            <thead>
+                                <tr>
+                                    <th>Id</th>
+                                    <th>Nombre</th>
+                                    <th>Apellido Paterno</th>
+                                    <th>Apellido Materno</th>
+                                    <th>Producto</th>
+                                    <th>Fecha de Compra</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
         </div>
-        <br>
-        <div class="row">
-            <div class="col-md-12">
-                <div class="tile">
-                    <div class="tile-body">
-                        <div class="table-responsive">
-                            <table class="table table-hover table-bordered" id="sampleTable">
-                                <thead>
-                                    <tr>
-                                        <th>Id compra</th>
-                                        <th>Nombre cliente</th>
-                                        <th>Apellidos</th>
-                                        <th>Fecha de Compra</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>Id</td>
-                                        <td>Tiger Nixon</td>
-                                        <td>System Architect</td>
-                                        <td>Edinburgh</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </main>
+    </div>
+</main>
 
+@section scripts{
+
+    <script src="~/Js/datatables.min.js"></script>
+    <script src="~/Js/compra.js"></script>
+
+}

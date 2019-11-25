@@ -77,6 +77,9 @@
     <Compile Include="DatosProducto.cs" />
     <Compile Include="DatosTarjeta.cs" />
     <Compile Include="DatosUsuario.cs" />
+    <Compile Include="DTO\CompraDTO.cs" />
+    <Compile Include="DTO\DetallesCompraDTO.cs" />
+    <Compile Include="DTO\UsuarioDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="sysdiagrams.cs">
       <DependentUpon>AirbagEntities.tt</DependentUpon>
@@ -135,6 +138,7 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

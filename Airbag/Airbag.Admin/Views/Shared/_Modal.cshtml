@@ -1,0 +1,15 @@
+﻿<div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+            @RenderSection("header", required: false)
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+        </div>
+        <div class="modal-body">
+            @RenderBody()
+        </div>
+        <div class="modal-footer">
+            @RenderSection("footer", required: false)
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        </div>
+    </div>
+</div>

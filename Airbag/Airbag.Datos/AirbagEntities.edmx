@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="AirbagModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="AirbagModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="sysdiagrams">
           <Key>
             <PropertyRef Name="diagram_id" />
@@ -21,7 +21,7 @@
           </Key>
           <Property Name="iIdAdministrador" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="cCorreo" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="cContrasenia" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="cContrasenia" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="tblCat_Carrito">
           <Key>
@@ -54,6 +54,7 @@
           <Property Name="cNombre" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="cDescripcion" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="cRutalmgProducto" Type="varchar" MaxLength="100" />
+          <Property Name="dtFechaRegistro" Type="date" Nullable="false" />
         </EntityType>
         <EntityType Name="tblCompra">
           <Key>
@@ -264,8 +265,7 @@
             <End Role="tblTarjeta" EntitySet="tblTarjeta" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="AirbagModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -285,7 +285,7 @@
           </Key>
           <Property Name="iIdAdministrador" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="cCorreo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="cContrasenia" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="cContrasenia" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
         </EntityType>
         <EntityType Name="tblCat_Carrito">
           <Key>
@@ -324,6 +324,7 @@
           <NavigationProperty Name="tblCat_Carrito" Relationship="Self.FK_iIdProductoCarrito" FromRole="tblCat_Producto" ToRole="tblCat_Carrito" />
           <NavigationProperty Name="tblCat_Categoria" Relationship="Self.FK_iIdCategoria" FromRole="tblCat_Producto" ToRole="tblCat_Categoria" />
           <NavigationProperty Name="tblDetallesCompra" Relationship="Self.FK_iIdProducto" FromRole="tblCat_Producto" ToRole="tblDetallesCompra" />
+          <Property Name="dtFechaRegistro" Type="DateTime" Nullable="false" Precision="0" />
         </EntityType>
         <EntityType Name="tblCompra">
           <Key>
@@ -595,6 +596,7 @@
           <EntitySetMapping Name="tblCat_Producto">
             <EntityTypeMapping TypeName="AirbagModel.tblCat_Producto">
               <MappingFragment StoreEntitySet="tblCat_Producto">
+                <ScalarProperty Name="dtFechaRegistro" ColumnName="dtFechaRegistro" />
                 <ScalarProperty Name="iIdProducto" ColumnName="iIdProducto" />
                 <ScalarProperty Name="iIdCategoria" ColumnName="iIdCategoria" />
                 <ScalarProperty Name="iEstatus" ColumnName="iEstatus" />

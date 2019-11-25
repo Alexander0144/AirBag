@@ -1,0 +1,49 @@
+﻿@model Airbag.Datos.tblCompra
+
+@{
+    /**/
+
+    Layout = "~/Views/Shared/_Modal.cshtml";
+}
+
+<div>
+    @section header{
+        <h5 class="modal-title">Detalles de compra</h5>
+    }
+    <hr />
+
+    @section body {
+
+        <div class="text-center">
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.dtFechaCompra)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.dtFechaCompra)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.tblTarjeta.cNumeroTarjeta)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.tblTarjeta.cNumeroTarjeta)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.tblUsuario.cNombre)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.tblUsuario.cNombre)
+                </dd>
+            </dl>
+        </div>
+    }
+    @section footer {
+    }
+</div>
+
+

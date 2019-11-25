@@ -1,25 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Airbag.Datos
 
 {
-    class DatosUsuario
+    public class DatosUsuario
     {
-        AirbagEntities contexto = new AirbagEntities();
-        public List<tblUsuario> ObtenerDatosUsuarios()
+     
+        public void AgregarUsuario(tblUsuario Usuario)
         {
-            //implementar metodo que retorne lista con datos de todos los usuarios Registrados
-            return null;
+            //Implementar método para agregar un nuevo registro de una Usuario a la Base de Datos
+            //A cada usuario le corresponde una sola Usuario, se podrá modificar el registro para reemplazarlo por otra Usuario
         }
 
-        public void AgregarUsuario(tblUsuario usuario)
-        {
-            //Implementar método para registrar un nuevo usuario en la base de datos
-        }
 
     }
 }

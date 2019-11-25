@@ -1,13 +1,11 @@
-﻿
-@{
+﻿@{
+
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-@section scripts{
-
-    <script src="~/Js/usuario.js"></script>
-
+@section Styles{
+    <link href="~/Styles/datatables.min.css" rel="stylesheet" />
 }
 
 <main class="app-content">
@@ -16,41 +14,35 @@
             <h1><i class="fa fa-th-list"></i> Lista de usuarios</h1>
         </div>
     </div>
-    <button class="btn btn-danger" type="button" id="DesactivarUsuario">Desactivar</button>
-    <button class="btn btn-success" type="button" id="ActivarUsuario">Activar</button>
+    <button class="btn btn-info" type="button" id="btnactivarUsuario">Activar</button>
+    <button class="btn btn-danger" type="button" id="btndesactivarUsuario">Desactivar</button>
+
     <br><br>
     <div class="row">
         <div class="col-md-12">
             <div class="tile">
                 <div class="tile-body">
-                    <div class="table-responsive">
-                        <table class="table table-hover table-bordered" id="sampleTable">
+                        <table class="table table-hover table-bordered display" id="TablaUsuarios" style="width:100%">
                             <thead>
                                 <tr>
                                     <th>Id</th>
                                     <th>Nombre</th>
-                                    <th>Apellidos</th>
+                                    <th>Apellido Paterno</th>
+                                    <th>Apellido Materno</th>
                                     <th>Correo</th>
-                                    <th>Dirección</th>
-                                    <th>Código postal</th>
                                     <th>Estatus</th>
                                 </tr>
                             </thead>
-                            <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Tiger Nixon</td>
-                                    <td>System Architect</td>
-                                    <td>Edinburgh</td>
-                                    <td>61</td>
-                                    <td>2011/04/25</td>
-                                    <td>Activo</td>
-                                </tr>
-                            </tbody>
+                            <tbody></tbody>
                         </table>
-                    </div>
                 </div>
             </div>
         </div>
     </div>
 </main>
+
+@section scripts{
+
+    <script src="~/Js/datatables.min.js"></script>
+    <script src="~/Scripts/Usuario/Usuario.js"></script>
+}
