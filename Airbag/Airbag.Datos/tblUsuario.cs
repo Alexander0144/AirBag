@@ -23,7 +23,7 @@ namespace Airbag.Datos
         }
     
         public int iIdUsuario { get; set; }
-        public int iEstatus { get; set; }
+        public bool iEstatus { get; set; }
         public string cNombre { get; set; }
         public string cApellidoPaterno { get; set; }
         public string cApellidoMaterno { get; set; }

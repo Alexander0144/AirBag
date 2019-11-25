@@ -21,7 +21,7 @@ namespace Airbag.Datos
         }
     
         public int iIdCategoria { get; set; }
-        public int iEstatus { get; set; }
+        public bool iEstatus { get; set; }
         public string cNombre { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

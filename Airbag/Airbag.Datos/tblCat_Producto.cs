@@ -23,13 +23,14 @@ namespace Airbag.Datos
     
         public int iIdProducto { get; set; }
         public int iIdCategoria { get; set; }
-        public int iEstatus { get; set; }
+        public bool iEstatus { get; set; }
         public int iExistencia { get; set; }
         public int iCantidadVendida { get; set; }
         public decimal dPrecio { get; set; }
         public string cNombre { get; set; }
         public string cDescripcion { get; set; }
         public string cRutalmgProducto { get; set; }
+        public System.DateTime dtFechaRegistro { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tblCat_Carrito> tblCat_Carrito { get; set; }
